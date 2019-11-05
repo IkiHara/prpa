@@ -1,0 +1,3 @@
+-std=c++11
+-Iinclude
+-DMY_DEBUG_FLAG
