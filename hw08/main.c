@@ -6,9 +6,6 @@ int main(int argc, char *argv[])
 {
     int c = 0, s = 0, l = 0, se = 0, le = 0;
     
-    if(argc > 6)
-        return 100;
-    
     for(int i = 1; i < argc; ++i)
     {
         if(strcmp(argv[i], "-c") == 0)
@@ -23,11 +20,6 @@ int main(int argc, char *argv[])
             s = atoi(argv[i]);
         else if(strcmp(argv[i-1], "-l") == 0)
             l = atoi(argv[i]);
-        else{
-            printf("zadany parametr neni spravny\n");
-            return 100;
-        }
-        printf("%s\n", argv[i]);
     }
 
     //printf("c = %i\n", c);
@@ -37,13 +29,15 @@ int main(int argc, char *argv[])
     //printf("l = %i\n", l);
 
     if(se == 1 && (s == 0 || s > 2)){
-        printf("zadany parametr -s neni spravny\n");
-        return 100;
+        fprintf(stderr, "Warning: Chybna hodnota parametru -s!\n");
+        se = 0;
     }
-    if(le == 1 && l == 0){
-        printf("zadany parametr -l neni spravny\n");
-        return 100;
+    if(le == 1 && l > 20){
+        fprintf(stderr, "Warning: Chybna hodnota parametru -l!\n");
+        le = 0;
     }
+
+
 
     return 0;
 }
