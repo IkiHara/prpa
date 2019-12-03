@@ -37,7 +37,20 @@ int main(int argc, char *argv[])
         le = 0;
     }
 
+    int counter = 0;
+    char *ar, temp;
 
+    ar = (char*)malloc(1*sizeof(char));
 
+    while(scanf("%s", &temp) == 1){
+        ar[counter] = temp;
+        ++counter;
+        ar = (char*)realloc(ar, (1+counter)*sizeof(char));
+    }
+
+    for(int q = 0; q < counter; ++q)
+        printf("%s\n", ar[q]);
+
+    free(ar);
     return 0;
 }
