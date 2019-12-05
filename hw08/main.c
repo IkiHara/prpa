@@ -161,7 +161,7 @@ int main(int argc, char *argv[]){
         for(int q = 0; q < counter; ++q)
             printf("%-20s %i\n", ar[q], occ[q]);
     }
-    printf("Pocet slov:%12i\n", counter);
+    printf("%-20s %i\n","Pocet slov:", counter);
     
     for(int i = 0; i < counter; ++i)
         for(int z = 0; z < counter; ++z){
@@ -169,12 +169,11 @@ int main(int argc, char *argv[]){
                 maxocc = occ[z];
         }
 
-    printf("Nejcastejsi:");
     for(int o = 0; o < counter; ++o)
         if(occ[o] == maxocc){
             static int a = 0;
             if(a == 0){
-                printf("%12s", ar[o]);
+                printf("%-20s %s", "Nejcastejsi:", ar[o]);
                 a = 1;
             }
             else if(a == 1)
@@ -182,12 +181,11 @@ int main(int argc, char *argv[]){
         }
     printf("\n");
     
-    printf("Nejmene caste:");
     for(int p = 0; p < counter; ++p)
         if(occ[p] == 1){
             static int b = 0;
             if(b == 0){
-                printf("%12s", ar[p]);
+                printf("%-20s %s", "Nejmene caste:", ar[p]);
                 b = 1;
             }
             else if(b == 1)
