@@ -1,0 +1,11 @@
+<equation variable="a">
+	<add value="10"/>
+	<add value="20"/>
+	<sub value="40"/>
+</equation>
+<equation variable="b">
+        <add value="30"/>
+        <add value="40"/>
+        <sub value="40"/>
+</equation>
+
